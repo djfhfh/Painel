@@ -1,17 +1,32 @@
 plugins {
     id 'com.android.application'
 }
+
 android {
-    compileSdk 33
+    namespace 'com.uriel.ffpanel'
+    compileSdk 34
+
     defaultConfig {
-        applicationId "com.panel.ff"
-        minSdk 26
-        targetSdk 33
+        applicationId "com.uriel.ffpanel"
+        minSdk 24
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 }
+
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'dev.rikka.shizuku:api:13.1.5'
+    implementation 'com.google.android.material:material:1.11.0'
 }
